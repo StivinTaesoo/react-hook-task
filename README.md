@@ -6,6 +6,20 @@ A modern, feature-rich task management application built with React, TypeScript,
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+## 📸 Screenshots
+
+Empty task - light theme
+![Empty task - light](./src/assets/empty-task-light.png)
+
+Empty task - dark theme
+![Empty task - dark](./src/assets/empty-task.png)
+
+Populated task - light theme
+![Empty task - dark](./src/assets/populated-task-light.png)
+
+Populated task - dark theme
+![Empty task - dark](./src/assets/populated-task-dark.png)
+
 ## ✨ Features
 
 -   ✅ **Add Tasks** - Create tasks with title, description, and priority levels
@@ -17,21 +31,6 @@ A modern, feature-rich task management application built with React, TypeScript,
 -   🎨 **Priority Levels** - Organize tasks by Low, Medium, or High priority
 -   📊 **Task Sections** - Separate views for active and completed tasks
 
-## 🚀 Demo
-
-Add your demo link or screenshot here
-
-## 📋 Table of Contents
-
--   [Features](#-features)
--   [Technologies Used](#-technologies-used)
--   [Project Structure](#-project-structure)
--   [Getting Started](#-getting-started)
--   [Usage](#-usage)
--   [React Concepts Demonstrated](#-react-concepts-demonstrated)
--   [Contributing](#-contributing)
--   [License](#-license)
-
 ## 🛠️ Technologies Used
 
 -   **React 18.2.0** - UI library for building component-based interfaces
@@ -39,39 +38,6 @@ Add your demo link or screenshot here
 -   **Vite 4.3.0** - Fast build tool and development server
 -   **Vanilla CSS** - Custom styling without CSS frameworks
 -   **localStorage API** - Browser storage for data persistence
-
-## 📁 Project Structure
-
-```
-task-manager/
-├── src/
-│   ├── types/
-│   │   └── Task.ts                    # TypeScript interfaces
-│   │
-│   ├── context/
-│   │   └── ThemeContext.tsx           # Theme context provider
-│   │
-│   ├── hooks/
-│   │   ├── useTheme.ts                # Custom hook for theme management
-│   │   └── useTasks.ts                # Custom hook for task CRUD operations
-│   │
-│   ├── components/
-│   │   ├── TaskForm.tsx               # Form component for adding tasks
-│   │   ├── TaskItem.tsx               # Individual task display component
-│   │   ├── TaskList.tsx               # Task list container component
-│   │   ├── TaskManager.tsx            # Main application component
-│   │   └── ThemeToggle.tsx            # Theme switcher button
-│   │
-│   ├── App.tsx                        # Root component with providers
-│   ├── App.css                        # Global styles
-│   └── main.tsx                       # Application entry point
-│
-├── index.html                         # HTML template
-├── package.json                       # Dependencies and scripts
-├── tsconfig.json                      # TypeScript configuration
-├── vite.config.ts                     # Vite configuration
-└── README.md                          # Project documentation
-```
 
 ## 🏁 Getting Started
 
@@ -87,7 +53,7 @@ Make sure you have the following installed:
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/task-manager.git
+git clone https://github.com/StivinTaesoo/react-hook-task.git
 cd task-manager
 ```
 
@@ -111,24 +77,6 @@ yarn dev
 
 Navigate to `http://localhost:5173` (or the port shown in your terminal)
 
-### Building for Production
-
-```bash
-npm run build
-# or
-yarn build
-```
-
-The production-ready files will be generated in the `dist/` directory.
-
-### Preview Production Build
-
-```bash
-npm run preview
-# or
-yarn preview
-```
-
 ## 💡 Usage
 
 ### Adding a Task
@@ -147,76 +95,6 @@ yarn preview
 ### Switching Themes
 
 Click the 🌙/☀️ button in the top-right corner to toggle between light and dark modes.
-
-## 🎓 React Concepts Demonstrated
-
-### 1. State Management with `useState`
-
-Used throughout the application for managing:
-
--   Task form inputs (title, description, priority)
--   Form validation errors
--   Task list data
--   Theme preference
-
-**Example:**
-
-```typescript
-const [title, setTitle] = useState("");
-const [tasks, setTasks] = useState<Task[]>([]);
-```
-
-### 2. Side Effects with `useEffect`
-
-Implemented for:
-
--   Loading tasks from localStorage on component mount
--   Saving tasks to localStorage whenever they change
--   Synchronizing state with browser storage
-
-**Example:**
-
-```typescript
-useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
-}, [tasks]);
-```
-
-### 3. Context API with `useContext`
-
-Used for:
-
--   Global theme management
--   Sharing theme state across components without prop drilling
--   Providing theme toggle functionality
-
-**Example:**
-
-```typescript
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
-
-export function ThemeProvider({ children }: ThemeProviderProps) {
-    const [theme, setTheme] = useState<"light" | "dark">("light");
-    // ...
-}
-```
-
-### 4. Custom Hooks
-
-Created reusable hooks:
-
--   `useTasks()` - Encapsulates all task-related logic and localStorage operations
--   `useTheme()` - Provides access to theme context with proper error handling
-
-**Example:**
-
-```typescript
-export function useTasks() {
-    const [tasks, setTasks] = useState<Task[]>(loadTasksFromStorage);
-    // ... task operations
-    return { tasks, addTask, toggleTask, deleteTask };
-}
-```
 
 ## 📦 Key Components
 
@@ -250,45 +128,6 @@ The application uses **vanilla CSS** with:
 -   Mobile-first responsive design
 -   Hover effects and interactive feedback
 
-## 🔧 Configuration Files
-
-### `tsconfig.json`
-
-TypeScript compiler configuration with strict type checking enabled.
-
-### `vite.config.ts`
-
-Vite build tool configuration with React plugin.
-
-### `package.json`
-
-Project dependencies and npm scripts.
-
-## 🐛 Troubleshooting
-
-### Tasks not persisting after reload
-
-Make sure your browser allows localStorage. Check browser console for errors.
-
-### Theme not switching
-
-Clear your browser cache and reload the application.
-
-### TypeScript errors
-
-Run `npm install` to ensure all type definitions are installed.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Commit your changes (`git commit -m 'Add some amazing feature'`)
-5. Push to the branch (`git push origin feature/amazing-feature`)
-6. Open a Pull Request
-
 ## 📝 Assignment Details
 
 This project was built as part of a React learning assignment covering:
@@ -305,21 +144,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-Your Name
+Stephen Tersoo
 
--   GitHub: [@yourusername](https://github.com/yourusername)
--   LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
-
-## 🙏 Acknowledgments
-
--   React documentation and community
--   TypeScript team for excellent tooling
--   Vite for blazing fast development experience
-
-## 📞 Support
-
-If you have any questions or need help, please open an issue in the GitHub repository.
-
----
+-   GitHub: [@StivinTaesoo](https://github.com/StivinTaesoo)
 
 **Happy Task Managing! 🎉**

@@ -2,8 +2,8 @@
 
 A modern, feature-rich task management application built with React, TypeScript, and vanilla CSS. This project demonstrates the use of React Hooks including `useState`, `useEffect`, and `useContext` for state management and side effects.
 
-![Task Manager](https://img.shields.io/badge/React-18.2.0-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0.0-blue)
+![Task Manager](https://img.shields.io/badge/React-19.1.1-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 ## 📸 Screenshots

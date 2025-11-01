@@ -10,8 +10,14 @@ export function TaskManager() {
 
     return (
         <div className={`app ${theme}`}>
-            <header className="app-header">
-                <h1>📝 Task Manager</h1>
+            <header
+                className={
+                    theme === "light"
+                        ? "app-header header-bg-light"
+                        : "app-header header-bg-dark"
+                }
+            >
+                <h1>📝Tersoo's Task Manager</h1>
                 <ThemeToggle />
             </header>
 

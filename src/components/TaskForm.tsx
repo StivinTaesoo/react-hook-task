@@ -61,7 +61,7 @@ export function TaskForm({ onAddTask }: TaskFormProps) {
             </div>
 
             <div className="form-group">
-                <label htmlFor="description">Description</label>
+                <label htmlFor="description">Description (optional)</label>
                 <textarea
                     id="description"
                     value={description}
@@ -72,7 +72,7 @@ export function TaskForm({ onAddTask }: TaskFormProps) {
             </div>
 
             <div className="form-group">
-                <label htmlFor="priority">Priority</label>
+                <label htmlFor="priority">Priority (optional)</label>
                 <select
                     id="priority"
                     value={priority}
